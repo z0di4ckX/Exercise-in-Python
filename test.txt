@@ -1,3 +1,0 @@
-This is the line 1. Apples.
-This is the line 2. Oranges.
-This is the line 3. Hotdogs.
