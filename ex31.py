@@ -1,4 +1,4 @@
-print("You enter a dark room with two doors. Do you go through door #1 or door #2.")
+print("You enter a dark room with two doors. Do you go through door #1 or door #2 or door #3.")
 
 door = input("> ")
 
@@ -30,3 +30,19 @@ elif door == "2":
         print("The insanity rots your eyes into a pool of muck. Good job!")
 else:
     print("You stumble around and fall on a knife and die. Good job!")
+
+if door == "3":
+    print("There's a lot zombies here eating a big cake. What do you do?")
+    print("1. Take the big cake.")
+    print("2. Scream at zomibes and run.")
+
+    zombies = input("> ")
+
+    if zombies == "1":
+        print("The zombies eats your face off. Good job!")
+    elif zombies == "2":
+        print("The zombies eats your hands off. Good job!")
+    else:
+        print("Well, doing %s is probabli better. Zombies runs away." % zombies)
+else:
+    print("Runing. Good job!")
