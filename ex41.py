@@ -1,5 +1,5 @@
 import random
-from urllib import urllib
+from urllib import urlopen
 import sys
 
 WORD_URL = "http://learncodethehardway.org/word.txt"
