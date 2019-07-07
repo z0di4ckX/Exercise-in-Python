@@ -43,6 +43,12 @@ class CentralCorridor(Scence):
 
         if action == "shoot!":
             print("Quick on the draw you yank out your blaster and fire it at the Gothons")
+            print("His clown costume is flowing and moving around his body, which throws")
+            print("off your aim. Your laser hits his costume but misses him entirely. This")
+            print("completely ruins his brand new costume his mother bought him, which")
+            print("make him fly into a rage and blast you repeatedly in the face until")
+            print("you are dead. The he eats you.")
+            return("death")
 
 class LaserWeaponArmory(Scence):
     def enter(self):
