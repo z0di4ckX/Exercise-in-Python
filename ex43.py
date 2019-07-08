@@ -93,7 +93,17 @@ class LaserWeaponArmory(Scence):
             guess = input("[keypad]> ")
 
             if guess == code:
-                print("")
+                print("The container clicks open and the seal breaks, letting gas out.")
+                print("You grab the neutron bomb and run as fast as you can to the")
+                print("bridge where you must place it in the right spot.")
+                return('the_bridge')
+            
+            else:
+                print("The lock buzzes one last time and the you hear a sickening")
+                print("melting sound as the mechanism is fused together.")
+                print("You decide to sit there, and finally the Gothons blow up the")
+                print("ship from their ship and you die.")
+                return('death')
 
 class TheBridge(Scence):
     def enter(self):
