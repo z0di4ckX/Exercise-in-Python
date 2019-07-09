@@ -41,7 +41,7 @@ class CentralCorridor(Scence):
         print("flowing around his hate filled body. He's blocking the door to the")
         print("Armory and about to pull a weapon to blast you.")
 
-        action = input()
+        action = input("> ")
 
         if action == "shoot!":
             print("Quick on the draw you yank out your blaster and fire it at the Gothon's")
@@ -107,7 +107,35 @@ class LaserWeaponArmory(Scence):
 
 class TheBridge(Scence):
     def enter(self):
-        pass
+        print("You burst onto the Bridge with the neutron destruct bomb")
+        print("under your arm and surprise 5 Gothons who are trying to")
+        print("take the control of the ship. Each of them has an even uglier")
+        print("clown costume than the last. They haven't pulled their")
+        print("weapons out yet, as they see the active bomb under your")
+        print("arm and don't want to set if off.")
+
+        action = input("> ")
+
+        if action == "throw the bomb":
+            print("In a panic you throw the bomb at the group of Gothons")
+            print("and make a leap for the door. Right as you drop it a")
+            print("Gothon shoots you right in the back killing you.")
+            print("As you die you knowing they will probably blow up when")
+            print("it goes off")
+            return('death')
+        
+        elif action == "slowly place the bomb":
+            print("You point your blaster at the bomb under your arm")
+            print("and the Gothons put their hands up and start to sweat.")
+            print("You in backward to the door, open it, and the carefully")
+            print("place the bomb on the floor, pointing your blaster at it.")
+            print("and blast the lock so the Gothons can't get out.")
+            print("Now that the bomb is placed you run  to the escape pod to")
+            print("get off this tin can.")
+            return('escape_pod')
+        else:
+            print("DOES NOT COMPUTE!")
+            return("the_bridge")
 
 class EscapePod(Scence):
     def enter(self):
