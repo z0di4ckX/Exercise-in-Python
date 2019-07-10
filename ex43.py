@@ -50,7 +50,7 @@ class CentralCorridor(Scence):
             print("completely ruins his brand new costume his mother bought him, which")
             print("make him fly into a rage and blast you repeatedly in the face until")
             print("you are dead. The he eats you.")
-            return("death")
+            return('death')
 
         elif action == "dodge!":
             print("Like a world class boxer you dodge, weave, slip and slide right")
@@ -59,7 +59,7 @@ class CentralCorridor(Scence):
             print("bang your head on the metal wall and pass out.")
             print("You wake up shortly after only to die as the Gothon stomps on")
             print("your head and eats you.")
-            return("death")
+            return('death')
         
         elif action == "tell a joke":
             print("Lucky for you they made you learn Gothon insults in the academy.")
@@ -139,15 +139,51 @@ class TheBridge(Scence):
 
 class EscapePod(Scence):
     def enter(self):
-        pass
+        print("You rush through the ship desperately tring to make it to.")
+        print("the escape pod before the whole ship explodes. It seems like")
+        print("hardly and Gothons are on the ship, so your run is clear of")
+        print("interference. You get to the chamber with the escape pods, and")
+        print("now need to pick one to take. Some of them could be damaged")
+        print("but you don't have time to look. There's 5 pods, which one")
+        print("do you take?")
+
+        good_pod = randint(1, 5)
+        guess = input("[pod #]> ")
+
+        if int(guess) != good_pod:
+            print("You jump into pod %s and hit the eject button." % guess)
+            print("The pod escapes out into the void of space, then")
+            print("implodes as the hull ruptures, crushing your body")
+            print("into jam jelly.")
+            return('death')
+        
+        else:
+            print("You jump into pod %s and hit the eject button." % guess)
+            print("The pod easily slides out into space heading to")
+            print("the planet below. As it flies to the plante, you look")
+            print("back and see your ship implode then explode like a")
+            print("bright star, taking out the Gothon ship at the same")
+            print("time. You won!")
+
+            return('finished')
 
 class Map(object):
+    scanes = [
+        'central_corridor': CentralCorridor(),
+        'laser_weapon_armory': LaserWeaponArmory(),
+        'the_bridge': TheBridge(),
+        'espcape_pod': EscapePod(),
+        'Death': Death()
+    ]
+
     def __init__(self, strat_scene):
-        pass
+        self.strat_scene = strat_scene
+
     def next_scene(self, scene_name):
-        pass
+        return(Map.scenes.get(scene_name))
+
     def opening_scene(self):
-        pass
+        return self.next_scene(self.strat_scene)
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
