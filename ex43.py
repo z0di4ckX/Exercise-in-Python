@@ -148,6 +148,7 @@ class EscapePod(Scence):
         print("do you take?")
 
         good_pod = randint(1, 5)
+        print(good_pod)
         guess = input("[pod #]> ")
 
         if int(guess) != good_pod:
@@ -167,22 +168,32 @@ class EscapePod(Scence):
 
             return('finished')
 
+class Finished(Scence):
+    def enter(self):
+        print("You return to your planet below, your are hero now.")
+
 class Map(object):
-    scanes = [
+
+    print("inside map class")
+
+    scanes = {
         'central_corridor': CentralCorridor(),
         'laser_weapon_armory': LaserWeaponArmory(),
         'the_bridge': TheBridge(),
-        'espcape_pod': EscapePod(),
-        'Death': Death()
-    ]
+        'escape_pod': EscapePod(),
+        'death': Death(), 
+        'finished': Finished()
+    }
 
     def __init__(self, strat_scene):
+        print(strat_scene)
         self.strat_scene = strat_scene
 
     def next_scene(self, scene_name):
-        return(Map.scenes.get(scene_name))
+        return map(scanes.get(scene_name))
 
     def opening_scene(self):
+        print("inside opening scene")
         return self.next_scene(self.strat_scene)
 
 a_map = Map('central_corridor')
