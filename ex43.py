@@ -12,10 +12,14 @@ class Engine(object):
 
     def play(self):
         current_scene = self.scene_map.opening_scene()
+        last_scene = self.scene_map.next_scene('finished')
+
         while True:
             print("\n---------")
             next_scene_name = current_scene.enter()
             current_scene = self.scene_map.next_scene(next_scene_name)
+
+        current_scene.enter()
 
 class Death(Scence):
     quips = [
@@ -176,7 +180,7 @@ class Map(object):
 
     print("inside map class")
 
-    scanes = {
+    scenes = {
         'central_corridor': CentralCorridor(),
         'laser_weapon_armory': LaserWeaponArmory(),
         'the_bridge': TheBridge(),
@@ -186,16 +190,16 @@ class Map(object):
     }
 
     def __init__(self, strat_scene):
-        
         self.strat_scene = strat_scene
 
     def next_scene(self, scene_name):
-        return (map(scanes.get(scene_name)))
+        val = map(scenes.get(scene_name))
+        return val
 
     def opening_scene(self):
         print("inside opening scene")
         return self.next_scene(self.strat_scene)
 
-a_map = Map('central_corridor')
+a_map = Map('laser_weapon_armory')
 a_game = Engine(a_map)
 a_game.play()
