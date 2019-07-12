@@ -186,11 +186,11 @@ class Map(object):
     }
 
     def __init__(self, strat_scene):
-        print(strat_scene)
+        
         self.strat_scene = strat_scene
 
     def next_scene(self, scene_name):
-        return map(scanes.get(scene_name))
+        return (map(scanes.get(scene_name)))
 
     def opening_scene(self):
         print("inside opening scene")
