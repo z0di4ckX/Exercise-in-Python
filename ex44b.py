@@ -3,7 +3,8 @@ class Parent(object):
         print("PARENT override()")
     
 class Child(Parent):
-    print("CHILD override()")
+    def override(self):
+        print("CHILD override()")
 
 dad = Parent()
 son = Child()
