@@ -1,10 +1,10 @@
-import web
+import webbrowser
 
 urls = (
     '/', 'index'
 )
 
-app = web.application(urls, globals())
+app = webbrowser.application(urls, globals())
 
 class index:
     def GET(self):
