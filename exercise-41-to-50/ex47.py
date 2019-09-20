@@ -22,8 +22,8 @@ def test_map():
     west = Room("Tress", "There are trees here, you can go east.")
     down = Room("Dungeon", "It's drak down here, you can go up")
 
-    start.add_pahts(['west': west, 'down': down])
-    west.add_pahts(['east': start])
+    start.add_pahts('west': west, 'down': down)
+    west.add_pahts('east': start)
     down.add_pahts('up': start)
 
     assert_equal(strat.go('west'), west)

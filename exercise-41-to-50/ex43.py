@@ -45,7 +45,7 @@ class CentralCorridor(Scence):
         print("flowing around his hate filled body. He's blocking the door to the")
         print("Armory and about to pull a weapon to blast you.")
 
-        action = input("> ")
+        action = input("=> ")
 
         if action == "shoot!":
             print("Quick on the draw you yank out your blaster and fire it at the Gothon's")
@@ -118,7 +118,7 @@ class TheBridge(Scence):
         print("weapons out yet, as they see the active bomb under your")
         print("arm and don't want to set if off.")
 
-        action = input("> ")
+        action = input("=> ")
 
         if action == "throw the bomb":
             print("In a panic you throw the bomb at the group of Gothons")
